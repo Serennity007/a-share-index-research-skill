@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "data_kind": "synthetic",
+  "as_of_utc": "2024-01-09T07:00:00+00:00",
+  "universe_label": "DEMO_PARTIAL_UNIVERSE",
+  "expected_count": 10,
+  "observed_count": 6,
+  "coverage": 0.6,
+  "declared_sample_complete": false,
+  "advancing": 3,
+  "declining": 2,
+  "unchanged": 1,
+  "advance_fraction": 0.5,
+  "sample_equal_weight_return": 0.0166666666666667,
+  "turnover_cny": 1000.0,
+  "top5_turnover_share": 0.9,
+  "observation_span_seconds": 0.0,
+  "oldest_observation_age_seconds": 0.0,
+  "sectors": [
+    {
+      "sector": "GROUP_A",
+      "count": 2,
+      "advancing": 1,
+      "equal_weight_return": 5.551115123125783e-17,
+      "turnover_cny": 300.0
+    },
+    {
+      "sector": "GROUP_B",
+      "count": 2,
+      "advancing": 1,
+      "equal_weight_return": 0.09999999999999998,
+      "turnover_cny": 400.0
+    },
+    {
+      "sector": "GROUP_C",
+      "count": 2,
+      "advancing": 1,
+      "equal_weight_return": -0.04999999999999993,
+      "turnover_cny": 300.0
+    }
+  ],
+  "excluded_future_rows": 0,
+  "source_sha256": "33c847256e97adfe73026a16f67938a6b988adba375d804de9e729067d26186f",
+  "scope": "Imported constituent-sample breadth only; equal-weight return is not the official weighted index return.",
+  "limitations": [
+    "Declared universe count and current/historical membership not independently verified",
+    "Provider units, price adjustments, suspensions and zero-change reasons require checking",
+    "No futures basis, hedge order, margin or short-sale implementation"
+  ],
+  "generated_at_utc": "2026-10-25T07:47:51.173559+00:00"
+}
