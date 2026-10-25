@@ -1,0 +1,272 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>大 A 股指研究工作台</title><style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#090e17;color:#dce5f3;font:15px/1.7 system-ui,sans-serif}main{max-width:1120px;margin:auto;padding:36px 20px}a{color:#67dfc4}header{border-bottom:1px solid #29364c;padding-bottom:24px}h1{font-size:clamp(28px,5vw,44px);margin:10px 0}.tag{color:#67dfc4;font:12px monospace;letter-spacing:2px}.meta,small{color:#9baac2}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:24px 0}article,section,details,.chart{background:#111b2b;border:1px solid #29364c;border-radius:10px;padding:18px;margin-bottom:14px}article p{margin:0;color:#9baac2}strong{display:block;font:26px/1.6 monospace;color:#e2faf4}small{display:block}h2{font-size:18px;margin:0 0 12px}ul{padding-left:22px}li{margin:8px 0}svg{display:block;width:100%;height:auto}pre{overflow:auto;max-height:480px;font-size:12px}footer{color:#9baac2;font-size:13px}@media print{:root{color-scheme:light}body{background:#fff;color:#111}article,section,details,.chart{background:#fff;border-color:#ccc;break-inside:avoid}strong,.meta,small,footer,a{color:#222}details{display:none}}
+</style><main><header><div class="tag">SERENNITY007 / RESEARCH WORKBENCH</div><h1>大 A 股指研究工作台</h1><p class="meta">synthetic · 截止 2024-01-09T07:00:00+00:00</p><a href="REPORT.md">Markdown</a> · <a href="bundle.json">完整 JSON</a></header><div class="grid"><article><p>已收盘 K 线</p><strong>48</strong><small>只使用截止时刻已收盘数据</small></article><article><p>均线排列</p><strong>descending</strong><small>价格变换，不是独立胜率证明</small></article><article><p>最新收盘</p><strong>102</strong><small>A_INDEX_SYNTHETIC</small></article><article><p>样本覆盖</p><strong>6/10</strong><small>数量齐全也不认证成分身份</small></article><article><p>样本上涨比例</p><strong>50.00%</strong><small>以已包含成分为分母</small></article><article><p>区间领先指数</p><strong>CSI1000</strong><small>四个现货价格指数共同窗口</small></article></div><div class="chart"><h2>价格观察</h2><svg viewBox="0 0 800 175" role="img" aria-label="已收盘价格相对走势"><title>已收盘价格；垂直范围 95 至 110；横轴按观测行排列，非连续时间距离</title><path d="M20 150H780" stroke="#334155"/><polyline points="20.00,30.00 36.17,30.88 52.34,31.76 68.51,32.64 84.68,33.52 100.85,34.40 117.02,35.28 133.19,36.16 149.36,37.04 165.53,37.92 181.70,38.80 197.87,39.68 214.04,40.56 230.21,41.44 246.38,42.32 262.55,43.20 278.72,44.08 294.89,44.96 311.06,45.84 327.23,46.72 343.40,47.60 359.57,48.48 375.74,49.36 391.91,50.24 408.09,51.12 424.26,52.00 440.43,52.88 456.60,53.76 472.77,54.64 488.94,55.52 505.11,56.40 521.28,57.28 537.45,58.16 553.62,59.04 569.79,59.92 585.96,60.80 602.13,74.00 618.30,81.33 634.47,88.67 650.64,96.00 666.81,103.33 682.98,110.67 699.15,118.00 715.32,125.33 731.49,132.67 747.66,140.00 763.83,118.00 780.00,88.67" fill="none" stroke="#36d8bb" stroke-width="3"/></svg><small>范围 95–110；横轴按已收盘观测排序。无买卖点标注。</small></div><section><h2>需要注意</h2><ul><li>SIMULATION / 全部为构造数据：展示计算与研究流程，不是历史预测或交易业绩。</li><li>样本覆盖率仅 60.0%，不能扩写为全市场。</li></ul></section><section><h2>证据缺口</h2><ul><li>风格与宽度的观察窗口需分别核对，不从共时变化直接推断因果或全市场普涨。</li></ul></section><section><h2>下次检查</h2><ul><li>补齐当时成分及缺失样本，检查权重与等权分歧。</li><li>讨论股指期货前另查具体合约、同期现货和基差。</li></ul></section><details><summary>计算明细与输入来源</summary><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;skill&quot;: &quot;a-share-index-research-skill&quot;,
+  &quot;title&quot;: &quot;大 A 股指研究工作台&quot;,
+  &quot;data_kind&quot;: &quot;synthetic&quot;,
+  &quot;as_of_utc&quot;: &quot;2024-01-09T07:00:00+00:00&quot;,
+  &quot;metrics&quot;: [
+    [
+      &quot;已收盘 K 线&quot;,
+      &quot;48&quot;,
+      &quot;只使用截止时刻已收盘数据&quot;
+    ],
+    [
+      &quot;均线排列&quot;,
+      &quot;descending&quot;,
+      &quot;价格变换，不是独立胜率证明&quot;
+    ],
+    [
+      &quot;最新收盘&quot;,
+      &quot;102&quot;,
+      &quot;A_INDEX_SYNTHETIC&quot;
+    ],
+    [
+      &quot;样本覆盖&quot;,
+      &quot;6/10&quot;,
+      &quot;数量齐全也不认证成分身份&quot;
+    ],
+    [
+      &quot;样本上涨比例&quot;,
+      &quot;50.00%&quot;,
+      &quot;以已包含成分为分母&quot;
+    ],
+    [
+      &quot;区间领先指数&quot;,
+      &quot;CSI1000&quot;,
+      &quot;四个现货价格指数共同窗口&quot;
+    ]
+  ],
+  &quot;attention&quot;: [
+    &quot;SIMULATION / 全部为构造数据：展示计算与研究流程，不是历史预测或交易业绩。&quot;,
+    &quot;样本覆盖率仅 60.0%，不能扩写为全市场。&quot;
+  ],
+  &quot;evidence_gaps&quot;: [
+    &quot;风格与宽度的观察窗口需分别核对，不从共时变化直接推断因果或全市场普涨。&quot;
+  ],
+  &quot;next_checks&quot;: [
+    &quot;补齐当时成分及缺失样本，检查权重与等权分歧。&quot;,
+    &quot;讨论股指期货前另查具体合约、同期现货和基差。&quot;
+  ],
+  &quot;structure&quot;: {
+    &quot;schema_version&quot;: 1,
+    &quot;instrument&quot;: &quot;A_INDEX_SYNTHETIC&quot;,
+    &quot;declared_timeframe&quot;: &quot;H4&quot;,
+    &quot;data_kind&quot;: &quot;synthetic&quot;,
+    &quot;as_of_utc&quot;: &quot;2024-01-09T07:00:00+00:00&quot;,
+    &quot;source_sha256&quot;: &quot;4bb5b1a88b744ea5b6f220892802af29a2d38d196379ecd1498bdeb172ba6c5e&quot;,
+    &quot;completed_bar_count&quot;: 48,
+    &quot;excluded_after_cutoff&quot;: 0,
+    &quot;latest_completed_bar&quot;: {
+      &quot;close_time&quot;: &quot;2024-01-09T00:00:00+00:00&quot;,
+      &quot;open&quot;: 98.0,
+      &quot;high&quot;: 102.5,
+      &quot;low&quot;: 97.5,
+      &quot;close&quot;: 102.0
+    },
+    &quot;observation_age_seconds&quot;: 25200.0,
+    &quot;moving_averages&quot;: {
+      &quot;ma5&quot;: 97.6,
+      &quot;ma10&quot;: 98.8,
+      &quot;ma20&quot;: 102.23799999999999
+    },
+    &quot;ma_ordering&quot;: &quot;descending&quot;,
+    &quot;macd&quot;: {
+      &quot;ready&quot;: true,
+      &quot;dif&quot;: -2.4893168090675317,
+      &quot;dea&quot;: -2.3260266125064257,
+      &quot;histogram&quot;: -0.326580393122212,
+      &quot;histogram_previous&quot;: -1.2421249018730176,
+      &quot;sign&quot;: &quot;negative&quot;,
+      &quot;absolute_magnitude&quot;: &quot;shrinking&quot;,
+      &quot;flip&quot;: null,
+      &quot;definition&quot;: &quot;EMA12-EMA26; EMA9 signal; histogram=2*(DIF-DEA); first-close EMA seed&quot;
+    },
+    &quot;boundary_observations&quot;: {
+      &quot;support&quot;: {
+        &quot;level&quot;: 100.0,
+        &quot;observation&quot;: &quot;reclaimed_after_closed_break&quot;
+      }
+    },
+    &quot;reference_window&quot;: null,
+    &quot;scope&quot;: &quot;Descriptive facts only; no live quotes, price target, trade instruction or win-rate estimate.&quot;,
+    &quot;limitations&quot;: [
+      &quot;Input close_time is assumed to mean bar close, not bar open; provider convention must be checked&quot;,
+      &quot;No session-calendar, missing-bar, contract-roll, unit or quote-source verification&quot;,
+      &quot;Manual support/resistance and analog anchors are not validated predictive features&quot;,
+      &quot;A reclaim/rejection observation does not establish a confirmed reversal or successful retest&quot;
+    ]
+  },
+  &quot;domain&quot;: {
+    &quot;schema_version&quot;: 1,
+    &quot;data_kind&quot;: &quot;synthetic&quot;,
+    &quot;as_of_utc&quot;: &quot;2024-01-09T07:00:00+00:00&quot;,
+    &quot;universe_label&quot;: &quot;DEMO_PARTIAL_UNIVERSE&quot;,
+    &quot;expected_count&quot;: 10,
+    &quot;observed_count&quot;: 6,
+    &quot;coverage&quot;: 0.6,
+    &quot;declared_sample_complete&quot;: false,
+    &quot;advancing&quot;: 3,
+    &quot;declining&quot;: 2,
+    &quot;unchanged&quot;: 1,
+    &quot;advance_fraction&quot;: 0.5,
+    &quot;sample_equal_weight_return&quot;: 0.0166666666666667,
+    &quot;turnover_cny&quot;: 1000.0,
+    &quot;top5_turnover_share&quot;: 0.9,
+    &quot;observation_span_seconds&quot;: 0.0,
+    &quot;oldest_observation_age_seconds&quot;: 0.0,
+    &quot;sectors&quot;: [
+      {
+        &quot;sector&quot;: &quot;GROUP_A&quot;,
+        &quot;count&quot;: 2,
+        &quot;advancing&quot;: 1,
+        &quot;equal_weight_return&quot;: 5.551115123125783e-17,
+        &quot;turnover_cny&quot;: 300.0
+      },
+      {
+        &quot;sector&quot;: &quot;GROUP_B&quot;,
+        &quot;count&quot;: 2,
+        &quot;advancing&quot;: 1,
+        &quot;equal_weight_return&quot;: 0.09999999999999998,
+        &quot;turnover_cny&quot;: 400.0
+      },
+      {
+        &quot;sector&quot;: &quot;GROUP_C&quot;,
+        &quot;count&quot;: 2,
+        &quot;advancing&quot;: 1,
+        &quot;equal_weight_return&quot;: -0.04999999999999993,
+        &quot;turnover_cny&quot;: 300.0
+      }
+    ],
+    &quot;excluded_future_rows&quot;: 0,
+    &quot;source_sha256&quot;: &quot;33c847256e97adfe73026a16f67938a6b988adba375d804de9e729067d26186f&quot;,
+    &quot;scope&quot;: &quot;Imported constituent-sample breadth only; equal-weight return is not the official weighted index return.&quot;,
+    &quot;limitations&quot;: [
+      &quot;Declared universe count and current/historical membership not independently verified&quot;,
+      &quot;Provider units, price adjustments, suspensions and zero-change reasons require checking&quot;,
+      &quot;No futures basis, hedge order, margin or short-sale implementation&quot;
+    ]
+  },
+  &quot;advanced&quot;: {
+    &quot;schema_version&quot;: 1,
+    &quot;data_kind&quot;: &quot;synthetic&quot;,
+    &quot;as_of_utc&quot;: &quot;2024-01-09T07:00:00+00:00&quot;,
+    &quot;start_date&quot;: &quot;2024-01-08&quot;,
+    &quot;end_date&quot;: &quot;2024-01-09&quot;,
+    &quot;complete_dates&quot;: 2,
+    &quot;incomplete_dates&quot;: 0,
+    &quot;excluded_unavailable_rows&quot;: 0,
+    &quot;price_returns&quot;: {
+      &quot;CSI1000&quot;: 0.040000000000000036,
+      &quot;CSI500&quot;: 0.030000000000000027,
+      &quot;HS300&quot;: 0.020000000000000018,
+      &quot;SSE50&quot;: 0.010000000000000009
+    },
+    &quot;relative_strength&quot;: [
+      {
+        &quot;numerator&quot;: &quot;CSI1000&quot;,
+        &quot;denominator&quot;: &quot;HS300&quot;,
+        &quot;relative_ratio_change&quot;: 0.019607843137254832,
+        &quot;return_difference_pp&quot;: 2.0000000000000018
+      },
+      {
+        &quot;numerator&quot;: &quot;CSI500&quot;,
+        &quot;denominator&quot;: &quot;HS300&quot;,
+        &quot;relative_ratio_change&quot;: 0.009803921568627416,
+        &quot;return_difference_pp&quot;: 1.0000000000000009
+      },
+      {
+        &quot;numerator&quot;: &quot;SSE50&quot;,
+        &quot;denominator&quot;: &quot;HS300&quot;,
+        &quot;relative_ratio_change&quot;: -0.009803921568627416,
+        &quot;return_difference_pp&quot;: -1.0000000000000009
+      }
+    ],
+    &quot;ranked_by_price_return&quot;: [
+      &quot;CSI1000&quot;,
+      &quot;CSI500&quot;,
+      &quot;HS300&quot;,
+      &quot;SSE50&quot;
+    ],
+    &quot;observations&quot;: {
+      &quot;2024-01-08&quot;: {
+        &quot;HS300&quot;: {
+          &quot;close&quot;: 100.0,
+          &quot;available_at&quot;: &quot;2024-01-08T07:00:00+00:00&quot;
+        },
+        &quot;SSE50&quot;: {
+          &quot;close&quot;: 100.0,
+          &quot;available_at&quot;: &quot;2024-01-08T07:00:00+00:00&quot;
+        },
+        &quot;CSI500&quot;: {
+          &quot;close&quot;: 100.0,
+          &quot;available_at&quot;: &quot;2024-01-08T07:00:00+00:00&quot;
+        },
+        &quot;CSI1000&quot;: {
+          &quot;close&quot;: 100.0,
+          &quot;available_at&quot;: &quot;2024-01-08T07:00:00+00:00&quot;
+        }
+      },
+      &quot;2024-01-09&quot;: {
+        &quot;HS300&quot;: {
+          &quot;close&quot;: 102.0,
+          &quot;available_at&quot;: &quot;2024-01-09T07:00:00+00:00&quot;
+        },
+        &quot;SSE50&quot;: {
+          &quot;close&quot;: 101.0,
+          &quot;available_at&quot;: &quot;2024-01-09T07:00:00+00:00&quot;
+        },
+        &quot;CSI500&quot;: {
+          &quot;close&quot;: 103.0,
+          &quot;available_at&quot;: &quot;2024-01-09T07:00:00+00:00&quot;
+        },
+        &quot;CSI1000&quot;: {
+          &quot;close&quot;: 104.0,
+          &quot;available_at&quot;: &quot;2024-01-09T07:00:00+00:00&quot;
+        }
+      }
+    },
+    &quot;end_date_age_days&quot;: 0,
+    &quot;source_sha256&quot;: &quot;a514b4d6dc12e2c88b0a012006fa0c294c00fbb922844d2123d1870749ff7a3c&quot;,
+    &quot;scope&quot;: &quot;Common-window cash-index price comparison, not total return, factor attribution or hedge execution.&quot;,
+    &quot;limitations&quot;: [
+      &quot;Index identity, methodology versions and provider observations must be independently verified&quot;,
+      &quot;Four index returns do not prove sector breadth or explain a style move causally&quot;,
+      &quot;No ETF tracking, futures basis, dividend reinvestment or transaction costs&quot;
+    ]
+  },
+  &quot;scope&quot;: &quot;Offline descriptive research; imported source claims are not authenticated; no execution or profit estimate.&quot;,
+  &quot;inputs&quot;: {
+    &quot;bars&quot;: {
+      &quot;source&quot;: {
+        &quot;name&quot;: &quot;Constructed synthetic example&quot;,
+        &quot;url&quot;: &quot;synthetic://local-example&quot;
+      },
+      &quot;file_name&quot;: &quot;bars.csv&quot;,
+      &quot;sha256&quot;: &quot;4bb5b1a88b744ea5b6f220892802af29a2d38d196379ecd1498bdeb172ba6c5e&quot;,
+      &quot;bytes&quot;: 2472
+    },
+    &quot;breadth&quot;: {
+      &quot;source&quot;: {
+        &quot;name&quot;: &quot;Constructed synthetic example&quot;,
+        &quot;url&quot;: &quot;synthetic://local-example&quot;
+      },
+      &quot;file_name&quot;: &quot;breadth.csv&quot;,
+      &quot;sha256&quot;: &quot;33c847256e97adfe73026a16f67938a6b988adba375d804de9e729067d26186f&quot;,
+      &quot;bytes&quot;: 362
+    },
+    &quot;indices&quot;: {
+      &quot;source&quot;: {
+        &quot;name&quot;: &quot;Constructed synthetic example&quot;,
+        &quot;url&quot;: &quot;synthetic://local-example&quot;
+      },
+      &quot;file_name&quot;: &quot;indices.csv&quot;,
+      &quot;sha256&quot;: &quot;a514b4d6dc12e2c88b0a012006fa0c294c00fbb922844d2123d1870749ff7a3c&quot;,
+      &quot;bytes&quot;: 444
+    }
+  },
+  &quot;config_sha256&quot;: &quot;cea0a08a8d80ce7fa72b57eb9d0a94ea6191b36c8ac54ccdab56927d821ed5f2&quot;,
+  &quot;generated_at_utc&quot;: &quot;2026-10-25T08:15:03.241523+00:00&quot;
+}</pre></details><footer>离线生成，无外部字体、脚本和行情请求。构造样例不能作为交易业绩；导入数据仍需核对来源和版本。</footer></main></html>

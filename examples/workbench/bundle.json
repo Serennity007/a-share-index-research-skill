@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "skill": "a-share-index-research-skill",
+  "title": "大 A 股指研究工作台",
+  "data_kind": "synthetic",
+  "as_of_utc": "2024-01-09T07:00:00+00:00",
+  "metrics": [
+    [
+      "已收盘 K 线",
+      "48",
+      "只使用截止时刻已收盘数据"
+    ],
+    [
+      "均线排列",
+      "descending",
+      "价格变换，不是独立胜率证明"
+    ],
+    [
+      "最新收盘",
+      "102",
+      "A_INDEX_SYNTHETIC"
+    ],
+    [
+      "样本覆盖",
+      "6/10",
+      "数量齐全也不认证成分身份"
+    ],
+    [
+      "样本上涨比例",
+      "50.00%",
+      "以已包含成分为分母"
+    ],
+    [
+      "区间领先指数",
+      "CSI1000",
+      "四个现货价格指数共同窗口"
+    ]
+  ],
+  "attention": [
+    "SIMULATION / 全部为构造数据：展示计算与研究流程，不是历史预测或交易业绩。",
+    "样本覆盖率仅 60.0%，不能扩写为全市场。"
+  ],
+  "evidence_gaps": [
+    "风格与宽度的观察窗口需分别核对，不从共时变化直接推断因果或全市场普涨。"
+  ],
+  "next_checks": [
+    "补齐当时成分及缺失样本，检查权重与等权分歧。",
+    "讨论股指期货前另查具体合约、同期现货和基差。"
+  ],
+  "structure": {
+    "schema_version": 1,
+    "instrument": "A_INDEX_SYNTHETIC",
+    "declared_timeframe": "H4",
+    "data_kind": "synthetic",
+    "as_of_utc": "2024-01-09T07:00:00+00:00",
+    "source_sha256": "4bb5b1a88b744ea5b6f220892802af29a2d38d196379ecd1498bdeb172ba6c5e",
+    "completed_bar_count": 48,
+    "excluded_after_cutoff": 0,
+    "latest_completed_bar": {
+      "close_time": "2024-01-09T00:00:00+00:00",
+      "open": 98.0,
+      "high": 102.5,
+      "low": 97.5,
+      "close": 102.0
+    },
+    "observation_age_seconds": 25200.0,
+    "moving_averages": {
+      "ma5": 97.6,
+      "ma10": 98.8,
+      "ma20": 102.23799999999999
+    },
+    "ma_ordering": "descending",
+    "macd": {
+      "ready": true,
+      "dif": -2.4893168090675317,
+      "dea": -2.3260266125064257,
+      "histogram": -0.326580393122212,
+      "histogram_previous": -1.2421249018730176,
+      "sign": "negative",
+      "absolute_magnitude": "shrinking",
+      "flip": null,
+      "definition": "EMA12-EMA26; EMA9 signal; histogram=2*(DIF-DEA); first-close EMA seed"
+    },
+    "boundary_observations": {
+      "support": {
+        "level": 100.0,
+        "observation": "reclaimed_after_closed_break"
+      }
+    },
+    "reference_window": null,
+    "scope": "Descriptive facts only; no live quotes, price target, trade instruction or win-rate estimate.",
+    "limitations": [
+      "Input close_time is assumed to mean bar close, not bar open; provider convention must be checked",
+      "No session-calendar, missing-bar, contract-roll, unit or quote-source verification",
+      "Manual support/resistance and analog anchors are not validated predictive features",
+      "A reclaim/rejection observation does not establish a confirmed reversal or successful retest"
+    ]
+  },
+  "domain": {
+    "schema_version": 1,
+    "data_kind": "synthetic",
+    "as_of_utc": "2024-01-09T07:00:00+00:00",
+    "universe_label": "DEMO_PARTIAL_UNIVERSE",
+    "expected_count": 10,
+    "observed_count": 6,
+    "coverage": 0.6,
+    "declared_sample_complete": false,
+    "advancing": 3,
+    "declining": 2,
+    "unchanged": 1,
+    "advance_fraction": 0.5,
+    "sample_equal_weight_return": 0.0166666666666667,
+    "turnover_cny": 1000.0,
+    "top5_turnover_share": 0.9,
+    "observation_span_seconds": 0.0,
+    "oldest_observation_age_seconds": 0.0,
+    "sectors": [
+      {
+        "sector": "GROUP_A",
+        "count": 2,
+        "advancing": 1,
+        "equal_weight_return": 5.551115123125783e-17,
+        "turnover_cny": 300.0
+      },
+      {
+        "sector": "GROUP_B",
+        "count": 2,
+        "advancing": 1,
+        "equal_weight_return": 0.09999999999999998,
+        "turnover_cny": 400.0
+      },
+      {
+        "sector": "GROUP_C",
+        "count": 2,
+        "advancing": 1,
+        "equal_weight_return": -0.04999999999999993,
+        "turnover_cny": 300.0
+      }
+    ],
+    "excluded_future_rows": 0,
+    "source_sha256": "33c847256e97adfe73026a16f67938a6b988adba375d804de9e729067d26186f",
+    "scope": "Imported constituent-sample breadth only; equal-weight return is not the official weighted index return.",
+    "limitations": [
+      "Declared universe count and current/historical membership not independently verified",
+      "Provider units, price adjustments, suspensions and zero-change reasons require checking",
+      "No futures basis, hedge order, margin or short-sale implementation"
+    ]
+  },
+  "advanced": {
+    "schema_version": 1,
+    "data_kind": "synthetic",
+    "as_of_utc": "2024-01-09T07:00:00+00:00",
+    "start_date": "2024-01-08",
+    "end_date": "2024-01-09",
+    "complete_dates": 2,
+    "incomplete_dates": 0,
+    "excluded_unavailable_rows": 0,
+    "price_returns": {
+      "CSI1000": 0.040000000000000036,
+      "CSI500": 0.030000000000000027,
+      "HS300": 0.020000000000000018,
+      "SSE50": 0.010000000000000009
+    },
+    "relative_strength": [
+      {
+        "numerator": "CSI1000",
+        "denominator": "HS300",
+        "relative_ratio_change": 0.019607843137254832,
+        "return_difference_pp": 2.0000000000000018
+      },
+      {
+        "numerator": "CSI500",
+        "denominator": "HS300",
+        "relative_ratio_change": 0.009803921568627416,
+        "return_difference_pp": 1.0000000000000009
+      },
+      {
+        "numerator": "SSE50",
+        "denominator": "HS300",
+        "relative_ratio_change": -0.009803921568627416,
+        "return_difference_pp": -1.0000000000000009
+      }
+    ],
+    "ranked_by_price_return": [
+      "CSI1000",
+      "CSI500",
+      "HS300",
+      "SSE50"
+    ],
+    "observations": {
+      "2024-01-08": {
+        "HS300": {
+          "close": 100.0,
+          "available_at": "2024-01-08T07:00:00+00:00"
+        },
+        "SSE50": {
+          "close": 100.0,
+          "available_at": "2024-01-08T07:00:00+00:00"
+        },
+        "CSI500": {
+          "close": 100.0,
+          "available_at": "2024-01-08T07:00:00+00:00"
+        },
+        "CSI1000": {
+          "close": 100.0,
+          "available_at": "2024-01-08T07:00:00+00:00"
+        }
+      },
+      "2024-01-09": {
+        "HS300": {
+          "close": 102.0,
+          "available_at": "2024-01-09T07:00:00+00:00"
+        },
+        "SSE50": {
+          "close": 101.0,
+          "available_at": "2024-01-09T07:00:00+00:00"
+        },
+        "CSI500": {
+          "close": 103.0,
+          "available_at": "2024-01-09T07:00:00+00:00"
+        },
+        "CSI1000": {
+          "close": 104.0,
+          "available_at": "2024-01-09T07:00:00+00:00"
+        }
+      }
+    },
+    "end_date_age_days": 0,
+    "source_sha256": "a514b4d6dc12e2c88b0a012006fa0c294c00fbb922844d2123d1870749ff7a3c",
+    "scope": "Common-window cash-index price comparison, not total return, factor attribution or hedge execution.",
+    "limitations": [
+      "Index identity, methodology versions and provider observations must be independently verified",
+      "Four index returns do not prove sector breadth or explain a style move causally",
+      "No ETF tracking, futures basis, dividend reinvestment or transaction costs"
+    ]
+  },
+  "scope": "Offline descriptive research; imported source claims are not authenticated; no execution or profit estimate.",
+  "inputs": {
+    "bars": {
+      "source": {
+        "name": "Constructed synthetic example",
+        "url": "synthetic://local-example"
+      },
+      "file_name": "bars.csv",
+      "sha256": "4bb5b1a88b744ea5b6f220892802af29a2d38d196379ecd1498bdeb172ba6c5e",
+      "bytes": 2472
+    },
+    "breadth": {
+      "source": {
+        "name": "Constructed synthetic example",
+        "url": "synthetic://local-example"
+      },
+      "file_name": "breadth.csv",
+      "sha256": "33c847256e97adfe73026a16f67938a6b988adba375d804de9e729067d26186f",
+      "bytes": 362
+    },
+    "indices": {
+      "source": {
+        "name": "Constructed synthetic example",
+        "url": "synthetic://local-example"
+      },
+      "file_name": "indices.csv",
+      "sha256": "a514b4d6dc12e2c88b0a012006fa0c294c00fbb922844d2123d1870749ff7a3c",
+      "bytes": 444
+    }
+  },
+  "config_sha256": "cea0a08a8d80ce7fa72b57eb9d0a94ea6191b36c8ac54ccdab56927d821ed5f2",
+  "generated_at_utc": "2026-10-25T08:15:03.241523+00:00"
+}

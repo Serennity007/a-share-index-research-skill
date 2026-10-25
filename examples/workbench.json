@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "skill": "a-share-index-research-skill",
+  "data_kind": "synthetic",
+  "instrument": "A_INDEX_SYNTHETIC",
+  "timeframe": "H4",
+  "as_of": "2024-01-09T15:00:00+08:00",
+  "max_bar_age_hours": 24,
+  "files": {
+    "bars": "bars.csv",
+    "breadth": "breadth.csv",
+    "indices": "indices.csv"
+  },
+  "options": {
+    "support": 100,
+    "universe": "DEMO_PARTIAL_UNIVERSE",
+    "expected_count": 10,
+    "max_panel_age_days": 3
+  }
+}
