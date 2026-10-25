@@ -1,14 +1,16 @@
-![大 A 股指研究](.github/cover.svg)
+[English](README.md) · [简体中文](README.zh-CN.md)
 
-# 大 A 股指研究
+![A-share Equity Index Research](.github/cover.svg)
 
-我把四个指数的表现和成分样本分开检查：指数涨多少，上涨家数有多少，大小盘谁领先，各自要看对应的数据。
+# A-share Equity Index Research
 
-[涛涛的期货研究](https://github.com/Serennity007/taotao-futures-research) · [Skill 指令](SKILL.md) · MIT
+Check index performance and constituent-sample breadth separately, including large/small-cap comparisons and missing coverage.
 
-## 跑一次练习
+[Futures research workbench](https://github.com/Serennity007/taotao-futures-research) · [Agent Skill](SKILL.md) · [Language coverage](docs/LANGUAGES.md) · MIT
 
-准备 Python 3.10 及以上版本，脚本只用标准库：
+## Run an offline exercise
+
+Python 3.10+ is required. The scripts use only the standard library.
 
 ```bash
 git clone https://github.com/Serennity007/a-share-index-research-skill.git
@@ -16,51 +18,56 @@ cd a-share-index-research-skill
 python scripts/run_research.py --config examples/workbench.json --out output
 ```
 
-打开终端打印的 `REPORT.html`。想先看结果，可以打开 [文字报告](examples/workbench/REPORT.md)，或下载 [HTML 报告](examples/workbench/REPORT.html) 后用浏览器查看。
+Open the printed `REPORT.html` path. You can also inspect the committed [Markdown report](examples/workbench/REPORT.md) or download the [HTML report](examples/workbench/REPORT.html).
 
-仓库自带的 CSV 是模拟数据，日期是练习标签。这组练习可以核对计算和步骤，不能作为历史交易记录。
+The supplied CSV files are synthetic; dates label the exercise. They test calculations and workflow, not a historical trading record. Research reports and reference material currently retain Chinese text; this source release provides English and Chinese entry guides, not an application language switch.
 
-## 对照结果看数据
+## Check the numbers
 
-四指数样例从100出发，沪深300末值102、中证1000末值104，分别涨2%和4%。收益差是2个百分点，相对比变化约1.9608%。
+The four-index fixture starts at 100. CSI 300 ends at 102 and CSI 1000 at 104: returns of 2% and 4%, a 2-percentage-point gap. The relative-ratio change is about 1.9608%.
 
-宽度样例只提供6只，完整范围声明为10只，覆盖率60%；3涨、2跌、1平，上涨比例50%。读报告时先记缺了4只，再判断样本表现。
+The breadth fixture contains 6 observations against a declared universe of 10: 60% coverage, with 3 advancing, 2 declining and 1 unchanged. The advance fraction is 50% of included observations; four constituents are missing.
 
-IF、IH、IC、IM 分别对应沪深300、上证50、中证500、中证1000。练习里的指数价格和成分数据都是模拟输入；讨论具体期货时，还要核对月份和同期现货。[方法说明](references/method.md) 列了这些区别。
+IF, IH, IC and IM correspond to CSI 300, SSE 50, CSI 500 and CSI 1000 respectively. Fixtures are synthetic spot-index and constituent data; actual futures research also needs the contract month and contemporaneous spot observations.
 
-## 换自己的数据
+See the [method](references/method.md) for assumptions and additional evidence to check.
 
-复制 `examples/workbench.json`，修改标的、截止时间和文件位置。导入数据时，将 `data_kind` 改成 `imported_observations`，给每个文件填写来源名称和取数时间。[输入字段与配置](references/workbench.md) 有说明，旧的单项计算命令也保留在里面。
+## Use your own data
 
-程序把 CSV 的相对路径按配置文件位置解析。若从其他目录运行，使用脚本和配置的绝对路径。
+Copy `examples/workbench.json`, then set the instrument, cutoff and file paths. For imported observations, set `data_kind` to `imported_observations` and record a source name and retrieval time for every file. [Fields and configuration](references/workbench.md) also document the original standalone calculation commands.
 
-## 保存和复盘
+CSV paths are resolved relative to the configuration file. When running from another directory, use absolute script and configuration paths.
 
-每次运行会新建 `output/run-…/`。`REPORT.md` 放文字结果，`bundle.json` 放计算明细，`inputs/` 保存本次使用的文件。
+## Save and review runs
 
-在本仓库用旧报告的配置重跑：
+Each run creates `output/run-…/`: `REPORT.md` contains the narrative, `bundle.json` the calculation details, and `inputs/` the actual files used. Rerun a saved snapshot in this repository:
 
 ```bash
-python scripts/run_research.py --config 旧报告目录/config.snapshot.json --out output
+python scripts/run_research.py --config /path/to/previous-run/config.snapshot.json --out output
 ```
 
-把“旧报告目录”换成实际路径。输入相同，计算结果应一致。复盘时保留旧报告，再用新数据另跑一份，对照原来等的条件有没有发生。[记录格式](references/report-template.md) 可作参考。
+The same inputs should reproduce the calculations. Keep the old run, create a separate run with new data and compare whether the stated conditions occurred. See the [report template](references/report-template.md).
 
-## 作为 Skill 使用
+## Use as an Agent Skill
 
-把整个仓库放进你使用工具的技能目录，保留文件夹名 `a-share-index-research-skill`。调用时写清数据位置、标的和截止时间：
+Copy the whole repository to your agent's skill directory, keeping the folder name `a-share-index-research-skill`. State the data paths, instrument, cutoff and desired response language:
 
 ```text
-使用 $a-share-index-research-skill，读取我提供的……，截止时间为……。
-运行计算，说明已经观察到什么、还有什么要查，保存报告。
+Use $a-share-index-research-skill with the supplied data, instrument and cutoff.
+Run the calculations, distinguish observations from missing evidence,
+save the report and explain the results in English.
 ```
 
-## 检查计算
+The original Skill instructions remain in Chinese. The response language request does not automatically translate script-generated artifacts.
+
+## Verification and sources
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-当前有 27 项本地测试，检查计算、时间截止和文件读写。实际数据的来源、单位与历史版本仍需要你核对。[官方资料入口](references/sources.md) 放在这里。
+Tests cover calculations, cutoff handling and file I/O. Real-world source identity, units and historical versions still require review. [Official source entry points](references/sources.md) are provided.
 
-K 线计算沿用我在 [选股工具合集](https://github.com/Serennity007/awesome-stock-quant-skills/tree/67156b0aa4860894a8cdbc66b797db535531fe59/my-skills/gold-cross-asset-research) 中整理的脚本，本仓库附有自身代码与测试。
+The OHLC helper derives from the author's [quant research collection](https://github.com/Serennity007/awesome-stock-quant-skills/tree/67156b0aa4860894a8cdbc66b797db535531fe59/my-skills/gold-cross-asset-research); this repository includes its own code and tests.
+
+Research and learning only; calculations and synthetic examples do not establish trading performance. Original code is distributed under [MIT](LICENSE).
